@@ -14,6 +14,7 @@ if [[ $PWD != /graphhopper ]]; then
   fi
 else
   echo "Updating elevation files"
+  mkdir -p /data/elevation-cache
   copied=0
   for ele in /usr/src/app/elevation/*.hgt.zip ; do
     fname=${ele##*/}
