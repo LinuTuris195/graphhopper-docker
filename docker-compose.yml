@@ -3,7 +3,7 @@ volumes:
   ghdata:
 services:
   graphhopper:
-    image: harelmazor/graphhopper:1.0-pre33.4.7
+    image: graphhopper/graphhopper:1.0
     volumes:
       - ghdata:/data
       - ./:/usr/src/app
