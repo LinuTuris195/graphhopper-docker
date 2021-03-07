@@ -10,7 +10,7 @@ graphhopper:
 
   # More options: foot,hike,bike,bike2,mtb,racingbike,motorcycle,car4wd,wheelchair (comma separated)
   # bike2 takes elevation data into account (like up-hill is slower than down-hill) and requires enabling graph.elevation.provider below.
-  graph.flag_encoders: car4wd|block_fords=false|block_barriers=false,foot|block_fords=false,mtb|block_fords=false,car
+  graph.flag_encoders: car4wd|block_fords=false|block_barriers=false,hike|block_fords=false,mtb|block_fords=false,car
 
   # Add additional information to every edge. Used for path details (#1548), better instructions (#1844) and tunnel/bridge interpolation (#798).
   # Default values are: road_class,road_class_link,road_environment,max_speed,road_access (since #1805)
@@ -40,7 +40,10 @@ graphhopper:
       vehicle: car4wd
       weighting: short_fastest
     - name: foot
-      vehicle: foot
+      vehicle: hike
+      weighting: short_fastest
+    - name: hike
+      vehicle: hike
       weighting: short_fastest
     - name: mtb
       vehicle: mtb
@@ -65,6 +68,7 @@ graphhopper:
   profiles_ch:
     - profile: car4wd
     - profile: foot
+    - profile: hike
     - profile: mtb
     - profile: car
 
