@@ -2,14 +2,22 @@
 
 ## Installation
 
-- Download this repository
-- Run `./ele-update.sh` in order to make the IHM elevation data available for use by Graphhopper.
+- Install Docker
+- Clone this repository
 
-## Activation and updated
-Run `./gh-update.sh` in order to
-- Download the OSM data if needed
-- If OSM data was downloaded:
-  - Calculate new routing data cache from it
-  - Start or restart Graphhopper, with the new routing data cache
+## Activation
 
-This script can be run periodically in order to update the routing data cache.
+Run `docker-compose up -d`
+
+
+## Updating the routing data
+
+For quick activation, the server will initially use historic routing data.
+To use up-to-date routing data, run `./gh-update.sh` on Linux or `gh-update.bat` on Windows.
+
+The scripts are identical (hard linked) and perform the following tasks:
+  - Download new OSM data if needed
+  - Calculate new routing data
+  - Start or restart the Graphhopper server, as appropriate, with the new routing data
+
+The scripts can also be run periodically or after changeing the `gh-config.yml` file.

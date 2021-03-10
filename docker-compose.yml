@@ -1,13 +1,12 @@
 version: '3.4'
-volumes:
-  ghdata:
 services:
   graphhopper:
     image: graphhopper/graphhopper:1.0
     volumes:
-      - ghdata:/data
+      - ./data:/data
       - ./:/usr/src/app
     ports:
       - 8989:8989
-    command: -i - -c /usr/src/app/gh-config.yml -o /data/default-gh/
+    entrypoint: ./graphhopper.sh -c /usr/src/app/gh-config.yml -o /data/default-gh/
+    command: web -i asia_israel-and-palestine.pbf
     restart: always
