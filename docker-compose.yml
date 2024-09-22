@@ -1,12 +1,12 @@
 version: '3.4'
 services:
   graphhopper:
-    image: graphhopper/graphhopper:1.0
+    image: israelhikingmap/graphhopper:latest
     volumes:
       - ./data:/data
       - ./:/usr/src/app
     ports:
       - 8989:8989
     entrypoint: ./graphhopper.sh -c /usr/src/app/gh-config.yml -o /data/default-gh/
-    command: web -i asia_israel-and-palestine.pbf
+    command: web -i germany-lastest.osm.pbf
     restart: always
