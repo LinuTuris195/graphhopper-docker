@@ -8,5 +8,5 @@ services:
     ports:
       - 8989:8989
     entrypoint: ./graphhopper.sh -c /usr/src/app/gh-config.yml -o /data/default-gh/
-    command: web -i germany-latest.osm.pbf
+    command: web -i /data/germany-latest.osm.pbf
     restart: always
