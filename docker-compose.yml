@@ -3,7 +3,7 @@ services:
   graphhopper:
     image: israelhikingmap/graphhopper:latest
     volumes:
-      - /opt/graphhopper_data:/data
+      - /datafs/graphhopper_data:/data
       - /opt/graphhopper/:/usr/src/app
     ports:
       - 8989:8989
