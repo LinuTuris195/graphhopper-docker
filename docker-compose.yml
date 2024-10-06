@@ -6,7 +6,7 @@ services:
       - /datafs/graphhopper_data:/data
       - /opt/graphhopper/:/usr/src/app
     ports:
-      - 8989:8989
+      - 7777:8989
     entrypoint: ./graphhopper.sh -c /usr/src/app/gh-config.yml -o /data/default-gh/
     command: web -i /data/germany-latest.osm.pbf
     restart: always
